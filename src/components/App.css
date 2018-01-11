@@ -1,0 +1,148 @@
+
+
+.ReactCodeMirror, .CodeMirror{
+    height: 100% !important;
+}
+.page-header {
+    color: #fff;
+    background: #191818;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.editor-pane {
+    /*position: fixed;*/
+
+    left: 0;
+    bottom: 0;
+    /*width: 50%;*/
+    height: 100%;
+    overflow: auto;
+
+}
+
+.result-pane > div {
+    /*position: fixed;*/
+    top: 0px;
+    right: 0;
+    left: 50%;
+    bottom: 0;
+    overflow: auto;
+    padding: 0px;
+    padding-left: 20px;
+    color: #444;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.editor textarea {
+    padding: 20px;
+}
+
+.editor-pane textarea {
+    min-height: 500px;
+}
+
+.markdown-controls {
+    position: relative;
+    z-index: 5;
+    text-align: right;
+    color: #fff;
+    float: right;
+}
+
+.markdown-controls form {
+    background-color: rgba(39, 40, 34, 0.5);
+    margin-right: 20px;
+}
+
+.markdown-controls legend {
+    border-bottom: 0;
+    color: #fff;
+    font-size: 1.25em;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+
+.CodeMirror {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+
+    font-size: 16px;
+}
+
+pre {
+    border: 1px solid #ccc;
+}
+
+blockquote {
+    color: #666;
+    margin: 0;
+    padding-left: 3em;
+    border-left: 0.5em #eee solid;
+}
+
+tr {
+    border-top: 1px solid #c6cbd1;
+    background: #fff;
+}
+
+th,
+td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table tr:nth-child(2n) {
+    background: #f6f8fa;
+}
+
+
+/*!*!*Highlight js theme*!**/
+/*html, body {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+/*body {*/
+    /*background: #2B2B2D;*/
+    /*color: #CBD1D6;*/
+    /*font-family: "Fira Mono", monospace;*/
+    /*font-size: 14px;*/
+/*}*/
+/*h3 {*/
+    /*margin: 1em 0 0;*/
+/*}*/
+/*pre {*/
+    /*margin: 0;*/
+/*}*/
+/*.container-left, .container-right {*/
+    /*height: 100%;*/
+    /*overflow: hidden;*/
+    /*padding: 0 1em;*/
+/*}*/
+/*.container-left {*/
+    /*border-right: 2px solid #CBD1D6;*/
+    /*position: fixed;*/
+    /*width: 32em;*/
+/*}*/
+/*.container-right {*/
+    /*margin-left: 35em;*/
+/*}*/
+/*@media (max-width: 56em) {*/
+    /*.container-left, .container-right {*/
+        /*height: auto;*/
+    /*}*/
+    /*.container-left {*/
+        /*border-right: none;*/
+        /*position: relative;*/
+    /*}*/
+    /*.container-right {*/
+        /*margin-left: 0;*/
+    /*}*/
+/*}*/

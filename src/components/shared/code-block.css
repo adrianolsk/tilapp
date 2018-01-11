@@ -1,0 +1,16 @@
+
+.code-block[data-language]:before {
+    display: block;
+    content: attr(data-language);
+    background-color: #333;
+    font-size: .7em;
+    padding: .2rem .5rem;
+    text-align: right;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+.code-block pre{
+    margin:0;
+    border:none;
+}
