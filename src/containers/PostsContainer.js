@@ -7,6 +7,7 @@ import CodeBlock from "../components/shared/code-block";
 import Markdown from 'react-markdown'
 
 import '../App.css';
+import '../components/App.css';
 import '../highlight-themes/default.css';
 import '../highlight-themes/material-dark.css';
 import '../highlight-themes/monokai.min.css'
@@ -81,32 +82,41 @@ const enhance = compose(
     // })
     withHandlers({
         add: props => () =>
-            props.firestore.add('posts', { text: initialSource || 'sample', done: false })
+            props.firestore.add('posts', {text: initialSource || 'sample', done: false})
     })
 )
 
 
+const styles = {
+    post: {
+        gridColumn: '2/-2',
+        border: 'solid 1px #e6e6e6',
+        padding: '35px',
+        backgroundColor: '#ecedf3',
+        marginBottom: '100px'
+    }
+}
+
 const PostsContainer = ({add, posts = []}) => (
     <div>
         <button onClick={add}>add</button>
+
+    <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 4fr 1fr',
+        gridTemplateRows: '1fr',
+        height: '100%'
+    }}>
+
         {posts.map(({text, id}) => {
             debugger;
             return (
-                <div key={id}>
-                    <div className="result-pane">
+                <div className="result-pane" key={id} style={styles.post}>
 
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: '1fr 1fr',
-                            gridTemplateRows: '1fr',
-                            height: '100%'
-                        }}>
-                            <div className="editor-pane">
 
-                                {/*<Editor  value={this.state.markdownSrc} onChange={this.handleMarkdownChange} />*/}
-                            </div>
 
-                            <div className="result-pane">
+
+
                                 <Markdown
                                     className="result"
                                     source={`${text}`}
@@ -115,13 +125,14 @@ const PostsContainer = ({add, posts = []}) => (
                                     renderers={{code: CodeBlock}}
                                 />
 
-                            </div>
-                        </div>
-                    </div>
+
+
+
                 </div>
             )
 
         })}
+    </div>
     </div>
 )
 

@@ -1,0 +1,16 @@
+// Grants a user access to a document matching their Auth user Id
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Collection named "users", document named after the userId
+    match /users/{userId} {
+      allow read, write: if request.auth.uid == userId;
+    }
+     match /{document=**} {
+      // allow read, write: if request.auth.uid != null;
+      allow read;
+      allow write: if get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.admin == true;
+      //allow write: if exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+
+  	}
+  } 
+}

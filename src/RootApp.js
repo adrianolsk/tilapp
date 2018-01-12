@@ -8,5 +8,7 @@ const initialState = window.__INITIAL_STATE__ || {firebase: {authError: null}};
 const store = configureStore(initialState);
 
 export default () => (
-    <Provider store={store} children={Layout()}/>
+    <Provider store={store} >
+        <Layout/>
+    </Provider>
 )
